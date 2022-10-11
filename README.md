@@ -19,6 +19,9 @@ Install using other package management
 Install kubectl binary with curl on Linux 
 
 
+logo depois disso tudo funcionar
+criar ou acrscentar a insgtalação do lens no .sh
+https://k8slens.dev/
 
 
 
