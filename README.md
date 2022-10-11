@@ -11,7 +11,10 @@ If you need access to a cluster you didn't create, see the Sharing Cluster Acces
 
 o que o instalador .sh faz:
 Install and Set Up kubectl on Linux
-Before you begin-You must use a kubectl version that is within one minor version difference of your cluster. For example, a v1.25 client can communicate with v1.24, v1.25, and v1.26 control planes. Using the latest compatible version of kubectl helps avoid unforeseen issues.
+
+install minikube
+?May connect to invilia cluster via kubeconfig file
+
 The following methods exist for installing kubectl on Linux:
 Install kubectl binary with curl on Linux
 Install using native package management
@@ -193,3 +196,14 @@ Verify plugin is successfully installed
 kubectl convert --help
 If you do not see an error, it means the plugin is successfully installed.
 
+
+
+
+
+
+
+
+
+
+
+Para trabalhar com objetos do Kubernetes seja para criar, modificar ou deletar eles, você precisará usar a API do Kubernetes. Quando você usa a interface de linha de comando do kubectl, por exemplo, o CLI faz as chamadas necessárias na API do Kubernetes para você. Você também pode usar a API do Kubernetes diretamente no seu próprio programa usando uma das Bibliotecas
