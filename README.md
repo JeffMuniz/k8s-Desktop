@@ -1,6 +1,8 @@
 # k8s-Desktop   Temos algumas opções para usar Kubernetes na sua localhost, notebook e até um pc velho
 
-
+winget search Microsoft.PowerShell
+winget install --id Microsoft.Powershell --source winget
+winget install --id Microsoft.Powershell.Preview --source winget
 
 Sobre kubeconfig file
 In order for kubectl to find and access a Kubernetes cluster, it needs a kubeconfig file, 
