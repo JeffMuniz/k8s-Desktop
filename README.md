@@ -1,8 +1,26 @@
 # k8s-Desktop   Temos algumas opções para usar Kubernetes na sua localhost, notebook e até um pc velho
 
+
+
+
+<br> 
+
+
+# Windows ajudante
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+</br>
+
 winget search Microsoft.PowerShell
 winget install --id Microsoft.Powershell --source winget
 winget install --id Microsoft.Powershell.Preview --source winget
+
+install choco
+
+Set-ExecutionPolicy Bypass -Scope Process -Force
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
 
 Sobre kubeconfig file
 In order for kubectl to find and access a Kubernetes cluster, it needs a kubeconfig file, 
@@ -234,48 +252,19 @@ Para trabalhar com objetos do Kubernetes seja para criar, modificar ou deletar e
 
 
 
-
-<#
-Simple, nice bootstrap to get Windows 10 up-and-running with nice setup!
-
-- Installs chocolatey (choco)
-- Installs common software
-
-I highly recommend Windows Subsystem for Linux (WSL), also, which is covered in
+Linux (WSL), also, which is covered in
   a separate gist. It also has a choco command for installing Docker Desktop after:
-  - https://gist.github.com/ScriptAutomate/f94cd44dacd0f420fae65414e717212d
-#>
-
-## IN AN ELEVATED SHELL
-## Right-click PowerShell -> Run As Administrator
-
-# Install chocolatey
-## For more info on chocolatey, see: https://chocolatey.org/docs/getting-started
-## For more info on this install approach: https://chocolatey.org/install#individual
-###
-# WARNING: As said by Chocolatey, themselves:
-# "Please inspect https://chocolatey.org/install.ps1 prior to running any of these scripts
-# to ensure safety. We already know it's safe, but you should verify the security and contents
-# of any script from the internet you are not familiar with. All of these scripts download a
-# remote PowerShell script and execute it on your machine. We take security very seriously."
-# Learn more about Chocolatey security protocols: https://docs.chocolatey.org/en-us/information/security
-###
-Set-ExecutionPolicy Bypass -Scope Process -Force
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-
-### Install things with chocolatey!
-## Search from terminal: choco search <package>
-## View locally installed choco packages: choco list --local-only
+  - https://gist.github.com/ScriptAutomate/
+  
 ## Search visually on site: https://chocolatey.org/packages
 ## I like installing the below packages, for example
 
 # Windows Terminal: Huge improvement over native tooling
-choco install microsoft-windows-terminal -y
 
 # PowerShell Core: Latest PowerShell, can sit ontop of Windows PowerShell
 ## run with pwsh.exe or in Microsoft Terminal when installed
 choco install powershell-core -y
+choco install microsoft-windows-terminal -y
 
 # Visual Studio Code: Cross-platform IDE of choice for me
 choco install vscode -y
@@ -350,40 +339,6 @@ install choco
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 xclip -v >> install-kubectl.ps1 
 start-process powershell –verb runAs
-
-#aws
-setx AWS_ACCESS_KEY_ID aws_access_key_id=SOME-KEY-ID
-setx AWS_SECRET_ACCESS_KEY aws_secret_access_key=SOME-TOKEN
-aws login
-aws eks --region us-east-1 update-kubeconfig --name cluster-eks-$(ENV)
- curl http://169.254.169.254/latest/meta-data/iam/security-credentials
-aws iam list-users
-aws eks --region us-east-1 update-kubeconfig --name cluster-eks-$(ENV) 
-aws eks --region us-east-1 update-kubeconfig --name cluster-eks-$(ENV) 
-aws iam list-users --profile profile-quality
-aws configure
-aws configure --profile profile-production
-aws ec2-instance-connect send-ssh-public-key --ssh-public-key profile-production --instance-id  SOME-TOKEN
-aws ec2-instance-connect send-ssh-public-key  --instance-id  SOME-TOKEN
-aws ec2-instance-connect --instance-id cluster-eks-$(ENV) --instance-id cluster-eks-$(ENV)
-aws eks list-clusters --profile profile-production
-aws eks --region us-east-1 update-kubeconfig --name cluster-eks-$(ENV) --profile .\profile-production
-aws eks --region us-east-1 update-kubeconfig --name cluster-eks-$(ENV) --profile .\profile-quality
-ping  10.133.37.85
-telnet 10.133.37.85:9092
-telnet 10.133.37.85 9092
-telnet 10.133.37.85 9093
-telnet machina-kafka 9093
-telnet machina-kafka 443
-
-unset AWS_DEFAULT_PROFILE
-unset AWS_SESSION_TOKEN
-setx AWS_SECRET_ACCESS_KEY aws_secret_access_key=SOME-TOKEN
-unsetx AWS_SECRET_ACCESS_KEY aws_secret_access_key=SOME-TOKEN
-REG delete HKCU\Environment /F /V FOOBAR
-REG delete HKCU\Environment /F /V AWS_SECRET_ACCESS_KEY 
-REG delete HKCU\Environment /F /V AWS_ACCESS_KEY_ID 
-
 
 #kubectl
 
