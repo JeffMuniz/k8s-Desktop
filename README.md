@@ -1,6 +1,7 @@
 # k8s-Desktop   Temos algumas opções para usar Kubernetes na sua localhost, notebook e até um pc velho
 
 
+choco install terraform minikube gcloudsdk docker-desktop -y
 
 
 <br> 
