@@ -86,7 +86,7 @@ Cole em macOS Terminal or Linux shell prompt
 
 
  Kubernetes in Docker Desktop:
-choco install docker-desktop -y
+ docker-desktop -y
 https://docs.docker.com/desktop/kubernetes/
 
 
@@ -263,20 +263,20 @@ Linux (WSL), also, which is covered in
 
 # PowerShell Core: Latest PowerShell, can sit ontop of Windows PowerShell
 ## run with pwsh.exe or in Microsoft Terminal when installed
-choco install powershell-core -y
-choco install microsoft-windows-terminal -y
+ powershell-core -y
+ microsoft-windows-terminal -y
 
 # Visual Studio Code: Cross-platform IDE of choice for me
-choco install vscode -y
+ vscode -y
 
 # Git: Should be hard to avoid needing this at work
-choco install git -y
+ git -y
 
 # Google Chrome
-choco install googlechrome -y
+ googlechrome -y
 
 # Brave Browser: Alternative web browser with many fans
-choco install brave -y
+ brave -y
 
 
 <#
@@ -315,23 +315,23 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 ## I like installing the below packages, for example
 
 # Windows Terminal: Huge improvement over native tooling
-choco install microsoft-windows-terminal -y
+ microsoft-windows-terminal -y
 
 # PowerShell Core: Latest PowerShell, can sit ontop of Windows PowerShell
 ## run with pwsh.exe or in Microsoft Terminal when installed
-choco install powershell-core -y
+ powershell-core -y
 
 # Visual Studio Code: Cross-platform IDE of choice for me
-choco install vscode -y
+ vscode -y
 
 # Git: Should be hard to avoid needing this at work
-choco install git -y
+ git -y
 
 # Google Chrome
-choco install googlechrome -y
+ googlechrome -y
 
 # Brave Browser: Alternative web browser with many fans
-choco install brave -y
+ brave -y
 
 
 function GoAdmin { Start-Process pwsh –Verb RunAs }
